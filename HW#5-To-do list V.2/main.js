@@ -21,6 +21,7 @@ function setItems() {
 function isNull() {
     if(localStorage.getItem('todo_items') != null ){
         getItems();
+        showAll();
     }
 }
 
@@ -73,6 +74,7 @@ function showAll() {
     setItems();
 };
 
+//Activate buttons
 var btns = filters.getElementsByTagName('button');
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function() {
@@ -151,7 +153,8 @@ btnAddTask.addEventListener('click', event => {
     var inputDeadline = document.getElementById('todo__form-deadline').value;
     if (( inputTask.trim() !== '' ) && ( inputDeadline !== '' )) {
         addTask(inputTask, inputDeadline);
-    }
+    } else {
+    alert('Fill all gaps!')}
 });
 
 //Filters
