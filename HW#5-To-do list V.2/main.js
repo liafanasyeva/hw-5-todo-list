@@ -21,7 +21,7 @@ function setItems() {
 function isNull() {
     if(localStorage.getItem('todo_items') != null ){
         getItems();
-        showAll();
+        //showAll();
     }
 }
 
